@@ -9,7 +9,7 @@
 int main()
 {
     FreeConsole();
-    std::cout << "program start\n";
+    //std::cout << "program start\n";
     //initalze winsock
     WSADATA wsData;
     WORD ver = MAKEWORD(2, 2);
@@ -77,13 +77,13 @@ int main()
             break;
         }
         if (bytsReceived == 0) {
-            std::cout << "Client Disconnected \n";
+            //std::cout << "Client Disconnected \n";
             break;
         }
 
         //echo massage backi to client
         send(clientSocket, buf, bytsReceived + 1, 0);
-        std::cout << buf << "\n";
+        //std::cout << buf << "\n";
 
         char shutD[255] = "shutDown\n";
         int shutDtrue = std::strcmp(shutD, buf);
